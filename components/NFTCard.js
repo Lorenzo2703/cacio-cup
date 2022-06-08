@@ -10,6 +10,9 @@ import {
   TextInput,
 } from "react-native";
 
+import "react-native-get-random-values";
+import { v4 as uuidv4 } from "uuid";
+
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
 import { EthPrice, NFTTitle } from "./SubInfo";
 import { TouchableHighlight } from "react-native-gesture-handler";
@@ -30,15 +33,6 @@ const NFTCard = ({ data }) => {
     } else {
       return 0;
     }
-  }
-
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
   }
 
   function insertNew(arg, obj) {
@@ -85,7 +79,7 @@ const NFTCard = ({ data }) => {
             />
             <Text style={styles.modalText}>Aggiungi un voto 😁</Text>
 
-            <View style={{ flexDirection: "row", marginBottom: "30px" }}>
+            <View style={{ flexDirection: "row", marginBottom: 30 }}>
               <Pressable onPress={() => setNumber(1)}>
                 <View style={styles.modalCustomView}>
                   {number == 0 ? (
@@ -93,8 +87,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starb}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   ) : (
@@ -102,8 +96,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starc}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   )}
@@ -116,8 +110,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starb}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   ) : (
@@ -125,8 +119,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starc}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   )}
@@ -139,8 +133,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starb}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   ) : (
@@ -148,8 +142,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starc}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   )}
@@ -162,8 +156,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starb}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   ) : (
@@ -171,8 +165,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starc}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   )}
@@ -185,8 +179,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starb}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   ) : (
@@ -194,8 +188,8 @@ const NFTCard = ({ data }) => {
                       source={assets.starc}
                       resizeMode="cover"
                       style={{
-                        width: "20px",
-                        height: "20px",
+                        width: 20,
+                        height: 20,
                       }}
                     />
                   )}
@@ -203,7 +197,7 @@ const NFTCard = ({ data }) => {
               </Pressable>
             </View>
 
-            <View style={{ flexDirection: "row", marginBottom: "10px" }}>
+            <View style={{ flexDirection: "row", marginBottom: 10 }}>
               <Pressable
                 style={[styles.button, styles.buttonCloseCustom]}
                 onPress={() => {
@@ -299,9 +293,9 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 170,
-    width: "90%",
+    width: 200,
     margin: 0,
-    marginBottom: "10px",
+    marginBottom: 10,
     borderWidth: 1,
     padding: 4,
   },
@@ -352,7 +346,7 @@ const styles = StyleSheet.create({
   },
   buttonCloseCustom1: {
     padding: 8,
-    marginLeft: "10px",
+    marginLeft: 10,
     backgroundColor: COLORS.primary,
   },
   textStyle: {
