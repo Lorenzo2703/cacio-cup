@@ -2,11 +2,11 @@
   "expo": {
     "name": "cacio-cup",
     "slug": "cacio-cup",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "orientation": "portrait",
-    "icon": "./assets/icons/trophy.png",
+    "icon": "./assets/icons/icon.png",
     "splash": {
-      "image": "./assets/LaunchImage-1242@3x~iphoneXsMax-portrait_1242x2688.png",
+      "image": "./assets/images/screen.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,13 +21,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/Among Us.png",
+        "foregroundImage": "./assets/icons/icon.png",
         "backgroundColor": "#ffdc00"
       },
       "package": "com.caciocup.com"
     },
     "web": {
-      "favicon": "./assets/Among Us.png"
+      "favicon": "./assets/icons/icon.png"
     }
   }
 }

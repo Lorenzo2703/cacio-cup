@@ -17,11 +17,14 @@ import { COLORS, SIZES, SHADOWS, assets } from "../constants";
 import { EthPrice, NFTTitle } from "./SubInfo";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
+
+
 const NFTCard = ({ data }) => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [number, setNumber] = useState(0);
   const [text, onChangeText] = useState("");
+
 
   function media(obj) {
     if (obj.length) {

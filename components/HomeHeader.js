@@ -6,7 +6,7 @@ import { TouchableHighlight } from "react-native-gesture-handler";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
-const HomeHeader = ({ onSearch }) => {
+const HomeHeader = ({ onSearch, data }) => {
   const navigation = useNavigation();
 
   return (
@@ -26,7 +26,7 @@ const HomeHeader = ({ onSearch }) => {
         </Text>
 
         <TouchableHighlight
-          onPress={() => navigation.navigate("Rank")}
+          onPress={() => navigation.navigate("Rank", { data })}
           underlayColor="primary">
           <View style={{ width: 45, height: 45 }}>
             <Image
@@ -55,7 +55,7 @@ const HomeHeader = ({ onSearch }) => {
             color: COLORS.white,
             marginTop: SIZES.base,
           }}>
-          Classifica delle migliori peggiori ragazze 😘
+          Ecco le migliori peggiori ragazze 😘
         </Text>
       </View>
 

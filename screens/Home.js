@@ -13,7 +13,7 @@ const Home = () => {
       // saving error
     }
   }
-
+  const [isFetching, setIsFetching] = useState(false);
   async function getData() {
     try {
       const jsonValue = await AsyncStorage.getItem("nftData");
@@ -22,6 +22,14 @@ const Home = () => {
       // error reading value
     }
   }
+
+  const onRefresh = async () => {
+    setIsFetching(true);
+
+    setTimeout(() => {
+      setIsFetching(false);
+    }, 2000);
+  };
 
   const [nftData, setNftData] = useState(NFTData);
 
@@ -33,7 +41,6 @@ const Home = () => {
       .catch((err) => {
         console.log(err);
       });
-
     fetch(
       "https://eu-central-1.aws.data.mongodb-api.com/app/application-0-zzwcv/endpoint/api?secret=test",
       {
@@ -60,7 +67,7 @@ const Home = () => {
           setNftData(data);
         });
       });
-  }, []);
+  }, [isFetching]);
 
   const handleSearch = (value) => {
     if (value.length === 0) {
@@ -89,8 +96,16 @@ const Home = () => {
             data={nftData}
             renderItem={({ item }) => <NFTCard data={item} />}
             keyExtractor={(item) => item.id}
+            onRefresh={onRefresh}
+            progressViewOffset={100}
+            extraData={nftData}
+            alwaysBounceVertical={true}
+            alwaysBounceHorizontal={false}
+            refreshing={isFetching}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
+            ListHeaderComponent={
+              <HomeHeader onSearch={handleSearch} data={nftData} />
+            }
           />
         </View>
 
