@@ -41,7 +41,7 @@ const Rank = ({ navigation, route }) => {
   });
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
-      <View style={{ width: "100%", height: 140 }}>
+      <View style={{ width: "100%", height: 80 }}>
         <FocusedStatusBar
           barStyle="dark-content"
           backgroundColor="transparent"
@@ -88,10 +88,10 @@ const Rank = ({ navigation, route }) => {
           source={winner.image}
           resizeMode="cover"
           style={{
-            width: 100,
-            padding: 100,
+            width: 180,
+            padding: 10,
             margin: 5,
-            height: 100,
+            height: 180,
           }}
         />
         <View

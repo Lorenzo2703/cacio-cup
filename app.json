@@ -2,13 +2,14 @@
   "expo": {
     "name": "cacio-cup",
     "slug": "cacio-cup",
+    "runtimeVersion": "2.718",
     "version": "1.1.1",
     "orientation": "portrait",
     "icon": "./assets/icons/icon.png",
     "splash": {
       "image": "./assets/images/screen.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#09000d"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +25,7 @@
         "foregroundImage": "./assets/icons/icon.png",
         "backgroundColor": "#ffdc00"
       },
-      "package": "com.caciocup.com"
+      "package": "com.lory2703.caciocup"
     },
     "web": {
       "favicon": "./assets/icons/icon.png"

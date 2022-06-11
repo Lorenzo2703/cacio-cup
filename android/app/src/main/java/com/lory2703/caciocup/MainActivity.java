@@ -1,4 +1,4 @@
-package com.caciocup.com;
+package com.lory2703.caciocup;
 
 import android.os.Build;
 import android.os.Bundle;

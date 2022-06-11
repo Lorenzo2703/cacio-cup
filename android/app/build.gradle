@@ -132,11 +132,11 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.caciocup.com'
+        applicationId 'com.lory2703.caciocup'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.1.1"
     }
     splits {
         abi {
