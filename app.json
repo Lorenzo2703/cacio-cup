@@ -2,8 +2,8 @@
   "expo": {
     "name": "cacio-cup",
     "slug": "cacio-cup",
-    "runtimeVersion": "2.718",
-    "version": "1.1.1",
+    "runtimeVersion": "2.832",
+    "version": "1.2.2",
     "orientation": "portrait",
     "icon": "./assets/icons/icon.png",
     "splash": {
@@ -14,11 +14,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lory2703.caciocup"
     },
     "android": {
       "adaptiveIcon": {

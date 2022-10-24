@@ -1,28 +1,15 @@
 import React from "react";
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  StatusBar,
-  FlatList,
-} from "react-native";
+import { View, Text, SafeAreaView, Image } from "react-native";
 
-import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
-import {
-  CircleButton,
-  RectButton,
-  SubInfo,
-  DetailsDesc,
-  DetailsBid,
-  FocusedStatusBar,
-} from "../components";
+import { COLORS, SIZES, assets, FONTS } from "../constants";
+import { CircleButton, FocusedStatusBar } from "../components";
 
 var max = -1;
 
 const Rank = ({ navigation, route }) => {
   let data = route.params.data;
   let winner = "";
+
   let classifica = [];
   data.forEach((element) => {
     let sum = 0;
@@ -36,6 +23,7 @@ const Rank = ({ navigation, route }) => {
           image: element.images,
         };
       }
+      console.log(winner);
     });
     classifica.push(sum);
   });

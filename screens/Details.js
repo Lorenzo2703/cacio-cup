@@ -37,8 +37,8 @@ const Details = ({ route, navigation }) => {
         <CircleButton
           imgUrl={assets.left}
           handlePress={() => navigation.goBack()}
-          left={15}
-          top={15}
+          left={25}
+          top={35}
         />
       </View>
 
