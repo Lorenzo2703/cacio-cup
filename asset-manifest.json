@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/cacio-cup/static/js/app.80d1d20c.chunk.js",
-    "app.js.map": "/cacio-cup/static/js/app.80d1d20c.chunk.js.map",
-    "runtime~app.js": "/cacio-cup/static/js/runtime~app.256ff268.js",
-    "runtime~app.js.map": "/cacio-cup/static/js/runtime~app.256ff268.js.map",
-    "static/js/2.9b42f807.chunk.js": "/cacio-cup/static/js/2.9b42f807.chunk.js",
-    "static/js/2.9b42f807.chunk.js.map": "/cacio-cup/static/js/2.9b42f807.chunk.js.map",
+    "app.js": "/cacio-cup/static/js/app.0bacbcea.chunk.js",
+    "app.js.map": "/cacio-cup/static/js/app.0bacbcea.chunk.js.map",
+    "runtime~app.js": "/cacio-cup/static/js/runtime~app.78f17047.js",
+    "runtime~app.js.map": "/cacio-cup/static/js/runtime~app.78f17047.js.map",
+    "static/js/2.973c4bf4.chunk.js": "/cacio-cup/static/js/2.973c4bf4.chunk.js",
+    "static/js/2.973c4bf4.chunk.js.map": "/cacio-cup/static/js/2.973c4bf4.chunk.js.map",
     "fonts/Inter-Bold.ttf": "/cacio-cup/./fonts/Inter-Bold.ttf",
     "fonts/Inter-Light.ttf": "/cacio-cup/./fonts/Inter-Light.ttf",
     "fonts/Inter-Medium.ttf": "/cacio-cup/./fonts/Inter-Medium.ttf",
@@ -17,7 +17,7 @@
     "index.html": "/cacio-cup/index.html",
     "manifest.json": "/cacio-cup/manifest.json",
     "serve.json": "/cacio-cup/serve.json",
-    "static/js/2.9b42f807.chunk.js.LICENSE.txt": "/cacio-cup/static/js/2.9b42f807.chunk.js.LICENSE.txt",
+    "static/js/2.973c4bf4.chunk.js.LICENSE.txt": "/cacio-cup/static/js/2.973c4bf4.chunk.js.LICENSE.txt",
     "static/media/n01.png": "/cacio-cup/static/media/n01.482357d2.png",
     "static/media/n02.png": "/cacio-cup/static/media/n02.09789d3d.png",
     "static/media/n03.png": "/cacio-cup/static/media/n03.0a0c1622.png",
@@ -29,8 +29,8 @@
     "static/media/trophy.png": "/cacio-cup/static/media/trophy.82be5849.png"
   },
   "entrypoints": [
-    "static/js/runtime~app.256ff268.js",
-    "static/js/2.9b42f807.chunk.js",
-    "static/js/app.80d1d20c.chunk.js"
+    "static/js/runtime~app.78f17047.js",
+    "static/js/2.973c4bf4.chunk.js",
+    "static/js/app.0bacbcea.chunk.js"
   ]
 }
