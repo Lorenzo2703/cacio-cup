@@ -55,7 +55,7 @@ const HomeHeader = ({ onSearch, data }) => {
             color: COLORS.white,
             marginTop: SIZES.base,
           }}>
-          Ecco le migliori peggiori ragazze 😘
+          Ecco i migliori peggiori 😘
         </Text>
       </View>
 

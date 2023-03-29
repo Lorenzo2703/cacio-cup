@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
   View,
@@ -16,15 +16,24 @@ import { v4 as uuidv4 } from "uuid";
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
 import { EthPrice, NFTTitle } from "./SubInfo";
 import { TouchableHighlight } from "react-native-gesture-handler";
-
-
+import * as Device from "expo-device";
+import * as Network from "expo-network";
 
 const NFTCard = ({ data }) => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [number, setNumber] = useState(0);
   const [text, onChangeText] = useState("");
+  const [text1, onChangeText1] = useState("");
 
+  let Networkip;
+
+  useEffect(() => {
+    Network.getIpAddressAsync().then((ip) => {
+      console.log(ip);
+      Networkip = ip;
+    });
+  }, []);
 
   function media(obj) {
     if (obj.length) {
@@ -79,6 +88,15 @@ const NFTCard = ({ data }) => {
               numberOfLines={4}
               onChangeText={onChangeText}
               value={text}
+            />
+            <Text style={styles.modalText1}>Firmati </Text>
+            <TextInput
+              style={styles.input1}
+              editable
+              maxLength={200}
+              numberOfLines={1}
+              onChangeText={onChangeText1}
+              value={text1}
             />
             <Text style={styles.modalText}>Aggiungi un voto 😁</Text>
 
@@ -206,6 +224,7 @@ const NFTCard = ({ data }) => {
                 onPress={() => {
                   setNumber(0);
                   onChangeText("");
+                  onChangeText1("");
                   setModalVisible(!modalVisible);
                 }}>
                 <Text style={styles.textStyle}>Annulla</Text>
@@ -218,11 +237,20 @@ const NFTCard = ({ data }) => {
                       id: uuidv4(),
                       voto: number,
                       motivazione: text,
+                      autore: text1,
+                      data: new Date().toLocaleDateString(),
+                      ip: Networkip,
+                      imei:
+                        Device?.deviceName +
+                        "-" +
+                        Device?.brand +
+                        "-" +
+                        Device?.modelName,
                     },
                   });
-
                   setNumber(0);
                   onChangeText("");
+                  onChangeText1("");
                   setModalVisible(!modalVisible);
                 }}>
                 <Text style={styles.textStyle}>Conferma</Text>
@@ -240,7 +268,7 @@ const NFTCard = ({ data }) => {
         <View
           style={{
             width: "100%",
-            height: 250,
+            height: 360,
           }}>
           <Image
             source={data.images}
@@ -299,8 +327,18 @@ const styles = StyleSheet.create({
     width: 200,
     margin: 0,
     marginBottom: 10,
-    borderWidth: 1,
-    padding: 4,
+    borderWidth: 0.1,
+    padding: 6,
+    borderRadius: 10,
+  },
+  input1: {
+    height: 30,
+    width: 200,
+    margin: 0,
+    borderRadius: 10,
+    marginBottom: 10,
+    borderWidth: 0.1,
+    padding: 6,
   },
   modalView: {
     margin: 20,
@@ -363,6 +401,13 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     padding: 10,
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  modalText1: {
+    marginBottom: 5,
+    padding: 5,
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",

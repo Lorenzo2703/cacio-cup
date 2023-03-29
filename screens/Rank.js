@@ -4,29 +4,36 @@ import { View, Text, SafeAreaView, Image } from "react-native";
 import { COLORS, SIZES, assets, FONTS } from "../constants";
 import { CircleButton, FocusedStatusBar } from "../components";
 
-var max = -1;
-
 const Rank = ({ navigation, route }) => {
-  let data = route.params.data;
-  let winner = "";
-
-  let classifica = [];
-  data.forEach((element) => {
-    let sum = 0;
-    element.commenti.forEach((item) => {
-      sum += item.voto;
-      if (sum > max) {
-        max = sum;
-        winner = {
-          nome: element.nome,
-          cognome: element.cognome,
-          image: element.images,
-        };
-      }
-      console.log(winner);
+  let data = route.params.data.slice(0, 6);
+  let data1 = route.params.data.slice(6);
+  //calculate total points for each user
+  Object.keys(data).forEach((key) => {
+    let totalPoints = 0;
+    data[key].commenti.forEach((commento) => {
+      totalPoints += commento.voto;
     });
-    classifica.push(sum);
+    data[key].punti = totalPoints;
   });
+
+  //sort data by points
+  let sortedData = Object.entries(data).sort(
+    (first, second) => second[1].punti - first[1].punti
+  );
+
+  Object.keys(data1).forEach((key) => {
+    let totalPoints = 0;
+    data1[key].commenti.forEach((commento) => {
+      totalPoints += commento.voto;
+    });
+    data1[key].punti = totalPoints;
+  });
+
+  //sort data by points
+  let sortedData1 = Object.entries(data1).sort(
+    (first, second) => second[1].punti - first[1].punti
+  );
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <View style={{ width: "100%", height: 80 }}>
@@ -38,7 +45,6 @@ const Rank = ({ navigation, route }) => {
         <CircleButton
           imgUrl={assets.left}
           handlePress={() => {
-            max = -1;
             navigation.goBack();
           }}
           left={25}
@@ -49,7 +55,6 @@ const Rank = ({ navigation, route }) => {
       <View
         style={{
           width: "100%",
-
           paddingVertical: SIZES.font,
           justifyContent: "center",
           alignItems: "center",
@@ -63,23 +68,19 @@ const Rank = ({ navigation, route }) => {
             fontSize: 25,
             textAlign: "center",
             color: COLORS.white,
+            fontFamily: FONTS.bold,
           }}>
-          Ottimo{" "}
-          <Text style={{ fontFamily: FONTS.bold }}>
-            {winner.nome + " " + winner.cognome}!
-          </Text>
-          {"\n"} La tua posizione in classifica è:
-          <Text style={{ fontFamily: FONTS.bold }}> 1{"\n\n"}</Text>
-          Con: {"\n" + max} punti
+          Ottimo {sortedData[0][1].nome}! sei 1°
+          {"\n\n Con: " + sortedData[0][1].punti} punti
         </Text>
         <Image
-          source={winner.image}
+          source={sortedData[0][1].images}
           resizeMode="cover"
           style={{
-            width: 180,
+            width: 170,
             padding: 10,
             margin: 5,
-            height: 180,
+            height: 170,
           }}
         />
         <View
@@ -95,17 +96,61 @@ const Rank = ({ navigation, route }) => {
           <Text
             style={{
               width: "90%",
-              margin: 40,
-              fontSize: 20,
+              margin: 10,
+              fontSize: 22,
+              fontWeight: "400",
               letterSpacing: 2,
               textAlign: "center",
               color: COLORS.white,
             }}>
-            La classifica {"\n\n"}Giulia: {classifica[0]} punti {"\n"}
-            Chiara: {classifica[1]} punti {"\n"}
-            Lucrezia: {classifica[2]} punti {"\n"}
-            Fabiana: {classifica[3]} punti {"\n"}
-            Sara: {classifica[4]} punti
+            <ol>
+              La classifica Ragazze{"\n\n"}
+              {[...sortedData].map(([key, value]) => (
+                <li key={key}>
+                  {value.nome} con {value.punti} punti
+                </li>
+              ))}
+            </ol>
+            <View
+              style={{
+                width: "100%",
+                paddingVertical: SIZES.font,
+                justifyContent: "center",
+                alignItems: "center",
+
+                zIndex: 1,
+              }}>
+              <Text
+                style={{
+                  width: "90%",
+                  margin: 10,
+                  fontSize: 25,
+                  textAlign: "center",
+                  color: COLORS.white,
+                  fontFamily: FONTS.bold,
+                }}>
+                Ottimo {sortedData1[0][1].nome}! sei 1°
+                {"\n\n Con: " + sortedData1[0][1].punti} punti
+              </Text>
+              <Image
+                source={sortedData1[0][1].images}
+                resizeMode="cover"
+                style={{
+                  width: 170,
+                  padding: 10,
+                  margin: 5,
+                  height: 170,
+                }}
+              />
+            </View>
+            <ol>
+              La classifica Ragazzi{"\n\n"}
+              {[...sortedData1].map(([key, value]) => (
+                <li key={key}>
+                  {value.nome} con {value.punti} punti
+                </li>
+              ))}
+            </ol>
           </Text>
         </View>
       </View>
