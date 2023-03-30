@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/cacio-cup/static/js/app.bb518cbf.chunk.js",
-    "app.js.map": "/cacio-cup/static/js/app.bb518cbf.chunk.js.map",
+    "app.js": "/cacio-cup/static/js/app.804722a1.chunk.js",
+    "app.js.map": "/cacio-cup/static/js/app.804722a1.chunk.js.map",
     "runtime~app.js": "/cacio-cup/static/js/runtime~app.78f17047.js",
     "runtime~app.js.map": "/cacio-cup/static/js/runtime~app.78f17047.js.map",
-    "static/js/2.7c7a6227.chunk.js": "/cacio-cup/static/js/2.7c7a6227.chunk.js",
-    "static/js/2.7c7a6227.chunk.js.map": "/cacio-cup/static/js/2.7c7a6227.chunk.js.map",
+    "static/js/2.399c7649.chunk.js": "/cacio-cup/static/js/2.399c7649.chunk.js",
+    "static/js/2.399c7649.chunk.js.map": "/cacio-cup/static/js/2.399c7649.chunk.js.map",
     "fonts/Inter-Bold.ttf": "/cacio-cup/./fonts/Inter-Bold.ttf",
     "fonts/Inter-Light.ttf": "/cacio-cup/./fonts/Inter-Light.ttf",
     "fonts/Inter-Medium.ttf": "/cacio-cup/./fonts/Inter-Medium.ttf",
@@ -17,7 +17,7 @@
     "index.html": "/cacio-cup/index.html",
     "manifest.json": "/cacio-cup/manifest.json",
     "serve.json": "/cacio-cup/serve.json",
-    "static/js/2.7c7a6227.chunk.js.LICENSE.txt": "/cacio-cup/static/js/2.7c7a6227.chunk.js.LICENSE.txt",
+    "static/js/2.399c7649.chunk.js.LICENSE.txt": "/cacio-cup/static/js/2.399c7649.chunk.js.LICENSE.txt",
     "static/media/Giacomo.png": "/cacio-cup/static/media/Giacomo.83942f6a.png",
     "static/media/Irene.png": "/cacio-cup/static/media/Irene.06840502.png",
     "static/media/LorenzoGiare.png": "/cacio-cup/static/media/LorenzoGiare.5c15e54f.png",
@@ -40,7 +40,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.78f17047.js",
-    "static/js/2.7c7a6227.chunk.js",
-    "static/js/app.bb518cbf.chunk.js"
+    "static/js/2.399c7649.chunk.js",
+    "static/js/app.804722a1.chunk.js"
   ]
 }
