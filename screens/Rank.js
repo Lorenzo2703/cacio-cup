@@ -5,8 +5,8 @@ import { COLORS, SIZES, assets, FONTS } from "../constants";
 import { CircleButton, FocusedStatusBar } from "../components";
 
 const Rank = ({ navigation, route }) => {
-  let data = route.params.data.slice(0, 6);
-  let data1 = route.params.data.slice(6);
+  let data = route.params.data.slice(0, 7);
+  let data1 = route.params.data.slice(7);
   //calculate total points for each user
   Object.keys(data).forEach((key) => {
     let totalPoints = 0;
@@ -77,10 +77,12 @@ const Rank = ({ navigation, route }) => {
           source={sortedData[0][1].images}
           resizeMode="cover"
           style={{
-            width: 170,
+            width: 200,
             padding: 10,
             margin: 5,
-            height: 170,
+            height: 200,
+            borderRadius: 18,
+            background: "linear-gradient(#20A4F3, #182B3A)",
           }}
         />
         <View
@@ -128,6 +130,7 @@ const Rank = ({ navigation, route }) => {
                   textAlign: "center",
                   color: COLORS.white,
                   fontFamily: FONTS.bold,
+                  marginTop: 60,
                 }}>
                 Ottimo {sortedData1[0][1].nome}! sei 1°
                 {"\n\n Con: " + sortedData1[0][1].punti} punti
@@ -136,10 +139,12 @@ const Rank = ({ navigation, route }) => {
                 source={sortedData1[0][1].images}
                 resizeMode="cover"
                 style={{
-                  width: 170,
+                  width: 200,
                   padding: 10,
                   margin: 5,
-                  height: 170,
+                  height: 200,
+                  borderRadius: 18,
+                  background: "linear-gradient(#20A4F3, #182B3A)",
                 }}
               />
             </View>

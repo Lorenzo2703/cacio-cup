@@ -22,6 +22,7 @@ import seraf from "../assets/images/seraf.png";
 import lorenzogiare from "../assets/images/LorenzoGiare.png";
 import giacomo from "../assets/images/Giacomo.png";
 import ludovica from "../assets/images/Ludovica.png";
+import irene from "../assets/images/Irene.png";
 
 export default {
   badge,
@@ -40,6 +41,7 @@ export default {
   n04,
   n05,
   ludovica,
+  irene,
 
   andrea,
   agace,

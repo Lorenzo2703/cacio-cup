@@ -100,7 +100,12 @@ const NFTCard = ({ data }) => {
             />
             <Text style={styles.modalText}>Aggiungi un voto 😁</Text>
 
-            <View style={{ flexDirection: "row", marginBottom: 30 }}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginBottom: 30,
+                justifyContent: "space-between",
+              }}>
               <Pressable onPress={() => setNumber(1)}>
                 <View style={styles.modalCustomView}>
                   {number == 0 ? (
@@ -276,7 +281,7 @@ const NFTCard = ({ data }) => {
             style={{
               width: "100%",
               height: "100%",
-              backgroundColor: COLORS.terziary,
+              background: "linear-gradient(#9Edddd, #04b0b0)",
               borderTopLeftRadius: SIZES.font,
               borderTopRightRadius: SIZES.font,
             }}
@@ -324,7 +329,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 170,
-    width: 200,
+    width: 90 + "%",
     margin: 0,
     marginBottom: 10,
     borderWidth: 0.1,
@@ -333,7 +338,7 @@ const styles = StyleSheet.create({
   },
   input1: {
     height: 30,
-    width: 200,
+    width: 90 + "%",
     margin: 0,
     borderRadius: 10,
     marginBottom: 10,
@@ -341,10 +346,11 @@ const styles = StyleSheet.create({
     padding: 6,
   },
   modalView: {
-    margin: 20,
+    margin: 10,
+    width: 85 + "%",
     backgroundColor: "white",
     borderRadius: 20,
-    padding: 35,
+    padding: 30,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
