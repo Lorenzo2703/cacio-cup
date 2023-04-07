@@ -28,7 +28,7 @@ const Home = () => {
 
     setTimeout(() => {
       setIsFetching(false);
-    }, 2000);
+    }, 3000);
   };
 
   const [nftData, setNftData] = useState(NFTData);
@@ -48,7 +48,7 @@ const Home = () => {
         headers: { "Content-Type": "application/json" },
       }
     )
-      .catch((err) => {
+      .catch(() => {
         getData().then((data) => {
           setNftData(data);
         });
@@ -62,7 +62,7 @@ const Home = () => {
           storeValue(NFTData);
         });
       })
-      .catch((err) => {
+      .catch(() => {
         getData().then((data) => {
           setNftData(data);
         });
@@ -77,7 +77,8 @@ const Home = () => {
     const filteredData = NFTData.filter(
       (item) =>
         item.nome.toLowerCase().includes(value.toLowerCase()) ||
-        item.cognome.toLowerCase().includes(value.toLowerCase())
+        item.cognome.toLowerCase().includes(value.toLowerCase()) ||
+        item.alias.toLowerCase().includes(value.toLowerCase())
     );
 
     if (filteredData.length === 0) {

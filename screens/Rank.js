@@ -109,7 +109,7 @@ const Rank = ({ navigation, route }) => {
               La classifica Ragazze{"\n\n"}
               {[...sortedData].map(([key, value]) => (
                 <li key={key}>
-                  {value.nome} con {value.punti} punti
+                  {value?.alias || value?.nome} con {value?.punti} punti
                 </li>
               ))}
             </ol>
@@ -152,7 +152,7 @@ const Rank = ({ navigation, route }) => {
               La classifica Ragazzi{"\n\n"}
               {[...sortedData1].map(([key, value]) => (
                 <li key={key}>
-                  {value.nome} con {value.punti} punti
+                  {value?.alias || value?.nome} con {value?.punti} punti
                 </li>
               ))}
             </ol>

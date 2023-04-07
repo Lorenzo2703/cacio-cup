@@ -33,6 +33,7 @@ const App = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
+          gestureEnabled: false,
         }}
         initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />

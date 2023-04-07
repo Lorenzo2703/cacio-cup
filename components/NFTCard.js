@@ -25,14 +25,15 @@ const NFTCard = ({ data }) => {
   const [number, setNumber] = useState(0);
   const [text, onChangeText] = useState("");
   const [text1, onChangeText1] = useState("");
-
-  let Networkip;
+  const [networkIp, setNetworkIp] = useState("");
 
   useEffect(() => {
-    Network.getIpAddressAsync().then((ip) => {
+    const getIpAddress = async () => {
+      const ip = await Network.getIpAddressAsync();
       console.log(ip);
-      Networkip = ip;
-    });
+      setNetworkIp(ip);
+    };
+    getIpAddress();
   }, []);
 
   function media(obj) {
@@ -244,7 +245,7 @@ const NFTCard = ({ data }) => {
                       motivazione: text,
                       autore: text1,
                       data: new Date().toLocaleDateString(),
-                      ip: Networkip,
+                      ip: networkIp,
                       imei:
                         Device?.deviceName +
                         "-" +
@@ -291,7 +292,7 @@ const NFTCard = ({ data }) => {
 
       <View style={{ width: "100%", padding: SIZES.font }}>
         <NFTTitle
-          title={data.nome + " " + data.cognome}
+          title={data?.alias || data?.nome + " " + data.cognome}
           titleSize={SIZES.large}
           subTitleSize={SIZES.small}
         />
