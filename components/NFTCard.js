@@ -19,7 +19,7 @@ import { TouchableHighlight } from "react-native-gesture-handler";
 import * as Device from "expo-device";
 import * as Network from "expo-network";
 
-const NFTCard = ({ data }) => {
+const NFTCard = ({ data, parentCallBack }) => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [number, setNumber] = useState(0);
@@ -30,14 +30,13 @@ const NFTCard = ({ data }) => {
   useEffect(() => {
     const getIpAddress = async () => {
       const ip = await Network.getIpAddressAsync();
-      console.log(ip);
       setNetworkIp(ip);
     };
     getIpAddress();
   }, []);
 
   function media(obj) {
-    if (obj.length) {
+    if (obj.length > 0) {
       let media = 0.0;
       for (let i = 0; i < obj.length; i++) {
         media += obj[i].voto;
@@ -60,6 +59,7 @@ const NFTCard = ({ data }) => {
     ).then((res) => {
       res.json().then((data) => console.log(data));
     });
+    parentCallBack();
   }
 
   return (
@@ -304,7 +304,7 @@ const NFTCard = ({ data }) => {
             justifyContent: "space-between",
             alignItems: "center",
           }}>
-          {data.commenti[0]?.voto ? (
+          {data.commenti.length > 0 ? (
             <EthPrice price={media(data.commenti)} />
           ) : (
             <EthPrice price={0.0} />

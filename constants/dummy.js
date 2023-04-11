@@ -6,7 +6,7 @@ const NFTData = [
     nome: "Giulia",
     cognome: "Marinucci",
     images: assets.n01,
-    commenti: [{ id: "1", voto: "1.0", motivazione: "" }],
+    commenti: [{ id: "1", voto: "0.0", motivazione: "" }],
     punti: 0,
   },
   {

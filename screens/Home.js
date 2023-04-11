@@ -23,12 +23,8 @@ const Home = () => {
     }
   }
 
-  const onRefresh = async () => {
-    setIsFetching(true);
-
-    setTimeout(() => {
-      setIsFetching(false);
-    }, 3000);
+  const onRefresh = () => {
+    setIsFetching(!isFetching);
   };
 
   const [nftData, setNftData] = useState(NFTData);
@@ -92,10 +88,12 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar backgroundColor={COLORS.primary} />
       <View style={{ flex: 1 }}>
-        <View style={{ zIndex: 0 }}>
+        <View style={{ flex: 1, flexDirection: "column", zIndex: 0 }}>
           <FlatList
             data={nftData}
-            renderItem={({ item }) => <NFTCard data={item} />}
+            renderItem={({ item }) => (
+              <NFTCard key={item.nome} data={item} parentCallBack={onRefresh} />
+            )}
             keyExtractor={(item) => item.id}
             onRefresh={onRefresh}
             progressViewOffset={100}

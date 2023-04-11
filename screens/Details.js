@@ -57,12 +57,16 @@ const Details = ({ route, navigation }) => {
             height={200}
             yAxisLabel=""
             yAxisSuffix=""
+            withDots={true}
             yAxisInterval={1} // optional, defaults to 1
             chartConfig={{
               backgroundColor: "#e26a00",
+              linejoinType: "round",
               backgroundGradientFrom: "#ff0f7b",
               backgroundGradientTo: "#f89b29",
               decimalPlaces: 2, // optional, defaults to 2dp
+              fillShadowGradientFromOpacity: 0.7,
+
               color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               style: {
@@ -85,6 +89,7 @@ const Details = ({ route, navigation }) => {
       </View>
       {data?.commenti?.length > 0 && (
         <FlatList
+          key={data.nome}
           data={data.commenti}
           renderItem={({ item }) => (
             <Text
