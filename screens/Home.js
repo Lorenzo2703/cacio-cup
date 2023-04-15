@@ -51,9 +51,11 @@ const Home = () => {
       })
       .then((res) => {
         res.json().then((data) => {
-          data.forEach((element, i) => {
-            NFTData[i].commenti = element.commenti;
-          });
+          data
+            .sort((a, b) => a.id - b.id)
+            .forEach((element, i) => {
+              NFTData[i].commenti = element.commenti;
+            });
           setNftData(NFTData);
           storeValue(NFTData);
         });
