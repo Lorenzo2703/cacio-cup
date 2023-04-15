@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/cacio-cup/static/js/app.7142b126.chunk.js",
-    "app.js.map": "/cacio-cup/static/js/app.7142b126.chunk.js.map",
+    "app.js": "/cacio-cup/static/js/app.437e7b83.chunk.js",
+    "app.js.map": "/cacio-cup/static/js/app.437e7b83.chunk.js.map",
     "runtime~app.js": "/cacio-cup/static/js/runtime~app.78f17047.js",
     "runtime~app.js.map": "/cacio-cup/static/js/runtime~app.78f17047.js.map",
     "static/js/2.399c7649.chunk.js": "/cacio-cup/static/js/2.399c7649.chunk.js",
@@ -41,6 +41,6 @@
   "entrypoints": [
     "static/js/runtime~app.78f17047.js",
     "static/js/2.399c7649.chunk.js",
-    "static/js/app.7142b126.chunk.js"
+    "static/js/app.437e7b83.chunk.js"
   ]
 }
